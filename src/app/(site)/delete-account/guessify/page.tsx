@@ -111,8 +111,8 @@ export default function GuessifyDeleteAccountPage() {
             ))}
           </ul>
           <p className="text-sm leading-relaxed text-muted-foreground mt-4">
-            Nothing is kept for analytics or marketing. Encrypted backups held by our database
-            provider are rotated out within 30 days. See the{" "}
+            Nothing is kept for analytics or marketing, and we do not create separate backups of
+            your account. See the{" "}
             <Link href="/privacy/guessify" className="text-primary hover:underline">
               privacy policy
             </Link>{" "}

@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FiArrowLeft, FiDatabase, FiMail, FiShare2, FiShield, FiTrash2, FiUser } from "react-icons/fi";
+import {
+  FiArrowLeft,
+  FiDatabase,
+  FiMail,
+  FiShare2,
+  FiShield,
+  FiTrash2,
+  FiUser,
+} from "react-icons/fi";
 
 export const metadata: Metadata = {
   title: "Guessify Privacy Policy",
@@ -30,7 +38,7 @@ const sections = [
     body: [
       "To run solo games, live duels, match history and the leaderboards you see in the app.",
       "To keep your session signed in and to sync results that were finished while you were offline.",
-      "To detect and limit obviously invalid writes (for example impossible scores or room results).",
+      "To validate writes, cap leaderboard awards and keep duel results referee-only.",
       "We do not use your data for advertising, profiling or automated decisions, and there are no third-party analytics or tracking SDKs in the app.",
     ],
   },
@@ -39,7 +47,7 @@ const sections = [
     title: "Who can see it",
     body: [
       "Your email and private match history are readable only by your account.",
-      "Your display name, points, wins and tier are public on the leaderboards unless you turn off \"Show me on leaderboards\" in Settings.",
+      'Your display name, points, wins and tier are public on the leaderboards unless you turn off "Show me on leaderboards" in Settings.',
       "Duel rooms are readable by signed-in players so they can join with a code; they contain display names and guesses, never email addresses.",
       "Data is stored with Google Firebase (Authentication and Cloud Firestore), which processes it on our behalf. We do not sell your data or share it with anyone else.",
     ],
@@ -49,7 +57,7 @@ const sections = [
     title: "Security and retention",
     body: [
       "Traffic is encrypted in transit (HTTPS/TLS). Access is enforced by Firestore security rules, so one account cannot read another account's private documents.",
-      "Duel rooms expire five minutes after their last activity and are cleared by the database.",
+      "Duel rooms expire five minutes after their last activity. Expiry is enforced by the app; a Firestore TTL policy is not yet enabled, so expired room documents may remain readable until they are cleaned up.",
       "Everything else is kept until you delete your account or ask us to delete it.",
     ],
   },
