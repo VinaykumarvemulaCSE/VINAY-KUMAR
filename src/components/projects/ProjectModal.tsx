@@ -22,6 +22,7 @@ import { TechIcon } from "@/components/TechIcon";
 import type { ProjectViewModel } from "@/lib/types";
 
 import {
+  getLiveLinkLabel,
   getProjectImageAlt,
   getProjectImages,
   getProjectNotes,
@@ -89,7 +90,7 @@ function ProjectLinks({ project }: { project: ProjectViewModel }) {
           rel="noopener noreferrer"
           className="flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground py-3.5 rounded-xl font-bold text-sm hover:opacity-90 transition-all glow-sm"
         >
-          <FiExternalLink size={16} /> Open live application
+          <FiExternalLink size={16} /> {getLiveLinkLabel(project)}
         </a>
       )}
       {project.githubLink && (

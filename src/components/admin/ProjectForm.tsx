@@ -88,6 +88,12 @@ export function ProjectForm({
           <Field label="Status" hint="Live, In progress, Archived…">
             <input name="status" defaultValue={project.status} required className={inputClass} />
           </Field>
+          <Field label="Platform" hint="Web shows Live Demo; app shows Expo build or APK download.">
+            <select name="platform" defaultValue={project.platform ?? "web"} className={inputClass}>
+              <option value="web">Web</option>
+              <option value="app">App</option>
+            </select>
+          </Field>
           <Field label="Display order" hint="Lower numbers appear first.">
             <input
               name="order"

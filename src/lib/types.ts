@@ -48,6 +48,7 @@ export interface ProjectViewModel {
   tech: ProjectTech[];
   liveLink?: string;
   githubLink?: string;
+  platform?: "web" | "app";
   status: string;
   coverImage?: string;
   gallery?: string[];

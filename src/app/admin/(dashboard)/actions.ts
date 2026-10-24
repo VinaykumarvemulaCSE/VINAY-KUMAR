@@ -291,6 +291,7 @@ export async function saveProjectAction(
     tech: readProjectTech(formData),
     liveLink: optional(text(formData, "liveLink")),
     githubLink: optional(text(formData, "githubLink")),
+    platform: text(formData, "platform") === "app" ? "app" : "web",
     status: text(formData, "status"),
     coverImage: optional(text(formData, "coverImage")),
     gallery: lines(formData, "gallery"),

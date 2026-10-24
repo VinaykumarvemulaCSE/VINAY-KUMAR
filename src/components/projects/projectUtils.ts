@@ -15,6 +15,17 @@ export function getProjectImageAlt(project: ProjectViewModel, url: string, index
   return project.galleryAlt?.[galleryIndex]?.trim() || `${project.title} screenshot ${index + 1}`;
 }
 
+/** Label the live button for the project platform and link type. */
+export function getLiveLinkLabel(project: ProjectViewModel): string {
+  if (project.platform !== "app") return "Live Demo";
+
+  const url = (project.liveLink ?? "").toLowerCase();
+  if (url.includes("expo.dev")) return "Expo build";
+  if (url.includes("play.google.com")) return "Play Store";
+  if (url.includes(".apk")) return "APK download";
+  return "App build";
+}
+
 /** Full write-up for the notes area, falling back to legacy long descriptions. */
 export function getProjectNotes(project: ProjectViewModel): string {
   const notes = project.notes?.trim();

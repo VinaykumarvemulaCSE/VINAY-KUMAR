@@ -74,6 +74,7 @@ export const projectSchema = z.object({
   tech: z.array(projectTechSchema),
   liveLink: optionalUrl,
   githubLink: optionalUrl,
+  platform: z.enum(["web", "app"]).optional(),
   status: z.string().trim().min(1),
   coverImage: optionalText,
   gallery: z.array(z.string().trim().min(1)).optional(),

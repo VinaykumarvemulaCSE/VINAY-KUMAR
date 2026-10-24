@@ -12,6 +12,7 @@ import {
   FiLayers,
 } from "react-icons/fi";
 import {
+  getLiveLinkLabel,
   getProjectImageAlt,
   getProjectImages,
   getProjectNotes,
@@ -182,7 +183,7 @@ export default async function WorkPage({ params }: PageProps) {
               className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 py-3 px-6 rounded-xl text-sm font-bold transition-all shadow-lg shadow-primary/20"
             >
               <FiArrowUpRight size={16} />
-              View live project
+              {getLiveLinkLabel(project)}
             </a>
           )}
           {project.githubLink && (

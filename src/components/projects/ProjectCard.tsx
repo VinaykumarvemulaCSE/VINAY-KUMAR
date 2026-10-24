@@ -7,7 +7,7 @@ import { FiExternalLink, FiFolder, FiGithub, FiImage, FiKey } from "react-icons/
 import { TechIcon } from "@/components/TechIcon";
 import type { ProjectViewModel } from "@/lib/types";
 
-import { getProjectImages, getProjectSummary } from "./projectUtils";
+import { getLiveLinkLabel, getProjectImages, getProjectSummary } from "./projectUtils";
 
 export type ProjectOpenView = "gallery" | "details";
 
@@ -157,7 +157,7 @@ export default function ProjectCard({ project, onOpen, variant = "grid" }: Proje
                 rel="noopener noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 py-2 rounded-lg text-sm font-bold transition-all shadow-lg shadow-primary/20 z-10"
               >
-                <FiExternalLink size={16} /> Live Demo
+                <FiExternalLink size={16} /> {getLiveLinkLabel(project)}
               </a>
             )}
             {project.githubLink && (
