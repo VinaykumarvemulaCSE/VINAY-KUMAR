@@ -60,10 +60,6 @@ export default function About({ profileData }: { profileData?: ProfileViewModel 
             About <span className="text-gradient">Me</span>
           </h2>
           <div className="w-12 h-1 bg-primary rounded-full mx-auto mb-6" />
-          <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto text-lg">
-            {profileData?.bio ||
-              "I'm a Computer Science student building full-stack web applications and learning how the whole system fits together — from the interface to the data layer."}
-          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-5">
